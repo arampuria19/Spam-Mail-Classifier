@@ -5,65 +5,55 @@
 I have developed a spam classifier program in Python which classifies given emails as spam or ham using Multilayer Perceptron (MLP).
 
 <h2> Overview</h2>
-I used the <a href="https://spamassassin.apache.org/old/publiccorpus/">Apache SpamAssassin public data</a> to train and test a ML-based classification model based on Multilevel Perceptron because of their high efficacy in terms of precision and recall. If you want to run this project, you only need the dependencies (see below). No extra files are needed as the Jupyter notebook will download all the required files.
+<p>
+This Python program implements a spam classifier using a Multilayer Perceptron (MLP) model. The classifier is trained to classify emails as either spam or ham (non-spam) using the <a href="https://spamassassin.apache.org/old/publiccorpus/">Apache SpamAssassin public data</a>. The MLP model is chosen for its high efficacy in terms of precision and recall. The program is designed to be easily executable without any additional files or dependencies, as the required files will be automatically downloaded by the included Jupyter notebook.
+</p>
 
---------------------------------------------------------------------------------------------------------------------------
-<h2> Project Files Description</h2>
-
-<p>This Project includes 1 executable file and 2 output files. The description is as follows: </p>
-<h4>Executable Files:</h4>
+<h2>Project Files</h2>
+<p>
+The project includes the following files:
+</p>
+<h4>Executable File:</h4>
 <ul>
-  <li><b>spam-classifier-optimized.ipynb</b> - A  Jupyter Notebook consisiting of all the functions required for training, testing and classification of the emails. Includes all functions required for classification operations.</li>
+  <li><b>spam-classifier-optimized.ipynb</b> - A Jupyter Notebook containing all the necessary functions for training, testing, and classifying emails. This file includes all the required functions for performing classification operations.
+  </li>
 </ul>
-
 <h4>Result Files:</h4>
 <ul>
-  <li><b>evaluation.txt</b> - Contains evaluation results table as well as Confusion Matrix of Spam and Ham classes.</li>
-  <li><b>spam_classifier_best.sav</b> - Contains the weights of the most optimized model. </li>
-  <li><b>confusion_matrix.png</b> - Confusion Matrix of the final result. </li>
+  <li><b>evaluation.txt</b> - Contains the evaluation results table, including the Confusion Matrix of the spam and ham classes.</li>
+  <li><b>spam_classifier_best.sav</b> - Contains the weights of the most optimized model.</li>
+  <li><b>confusion_matrix.png</b> - Visual representation of the Confusion Matrix for the final results.</li>
 </ul>
 
---------------------------------------------------------------------------------------------------------------------------
-<h2> Multilevel Perceptron</h2>
-
+<h2>Multilayer Perceptron (MLP)</h2>
 <p>
-The Perceptron is one of the simplest ANN architectures, invented in 1957 by Frank Rosenblatt. It is based on a slightly different artificial neuron 
-called a threshold logic unit (TLU), or sometimes a linear threshold unit (LTU). The inputs and output are numbers (instead of binary on/off values), 
-and each input connection is associated with a weight. The TLU computes a weighted sum of its inputs (z = w<sub>1</sub>x<sub>1</sub> +... + w<sub>n</sub>x<sub>n</sub> = x<sup>T</sup>w), then applies a step function to that sum and outputs the result: h<sub>w</sub>(x) = step(z), where 
-  z = x<sup>T</sup>w. </p>
-<p align="center"> 
-<img src="Images/perceptron.jpeg" alt="A single Perceptron" width = "400px" height="200px">
+The MLP is a type of Artificial Neural Network (ANN) architecture, originally invented by Frank Rosenblatt in 1957. It is based on an artificial neuron called a Threshold Logic Unit (TLU) or Linear Threshold Unit (LTU). In an MLP, the inputs and outputs are numerical values, and each input connection is associated with a weight. The TLU computes a weighted sum of its inputs, applies a step function to the sum, and outputs the result. The MLP consists of one input layer, one or more hidden layers of TLUs, and a final output layer of TLUs. Each layer, except the output layer, includes a bias neuron and is fully connected to the next layer.
 </p>
-<p>
-An MLP is composed of one (passthrough) input layer, one or more layers of TLUs, called hidden layers, and one final layer of TLUs called the output layer. 
-The layers close to the input layer are usually called the lower layers, and the ones close to the outputs are usually called the upper layers. Every layer 
-except the output layer includes a bias neuron and is fully connected to the next layer. </p>
 <p align="center"> 
-<img src="Images/MLP.jpeg" alt="Multilevel Perceptron" width = "430px" height="300px">
+<img src="Images/MLP.jpeg" alt="Multilayer Perceptron" width="430px" height="300px">
 </p>
 
---------------------------------------------------------------------------------------------------------------------------
-
-<h2> Stages in development</h2>
-Every stage described here has been followed in the attached Jupyter Notebook.
+<h2>Development Stages</h2>
+<p>
+The development of the spam classifier program follows the following stages, as outlined in the attached Jupyter Notebook:
+</p>
 <ol>
-  <li>Download the dataset.
-  <li>Prepare the data
+  <li>Download the dataset.</li>
+  <li>Data preparation:
     <ul>
-      <li>Remove all the email headers(like sender details, receiver details, subject, and date)
-      <li>Convert the whole email into lowercase
-      <li>Replace all the url's present with the word 'URL' in email
-      <li>Replace all the numbers present with the word 'NUM' in email
-      <li>Remove all the punctuations present in email
+      <li>Remove email headers, including sender details, receiver details, subject, and date.</li>
+      <li>Convert the entire email to lowercase.</li>
+      <li>Replace all URLs in the email with the word 'URL'.</li>
+      <li>Replace all numbers in the email with the word 'NUM'.</li>
+      <li>Remove all punctuation marks from the email.</li>
     </ul>
-  <li>Split it into two sets - test and train. 
-  <li>Convert the resulting text into bag-of-words representation (vector of counts of all words that appears in the training instance)
-  <li>Train and evaluate the MLP model on recall, precision and ROC
-  <li>Fine-tune the MLP classifier
-  <li>Evaluate it on the test set
+  </li>
+  <li>Split the dataset into training and test sets.</li>
+  <li>Convert the text data into a bag-of-words representation, which is a vector of word counts for each training instance.</li>
+  <li>Train and evaluate the MLP model based on recall, precision, and the Receiver Operating Characteristic (ROC) curve.</li>
+  <li>Fine-tune the MLP classifier.</li>
+  <li>Evaluate the classifier on the test set.</li>
 </ol>
-
---------------------------------------------------------------------------------------------------------------------------------
 
 <h2> Technologies Used </h2>
 <p align="center"> 

@@ -1,6 +1,6 @@
 <h1 align = "center"> Spam Classifier </h1>
 <p align="center"> 
-<img src="gifs/spam-classifier.gif" alt="Animated gif of spam clasffication" height="382px">
+<img src="gif/spam-classifier.gif" alt="Animated gif of spam clasffication" height="382px">
 </p>
 I have developed a spam classifier program in Python which classifies given emails as spam or ham using Multilayer Perceptron (MLP).
 
